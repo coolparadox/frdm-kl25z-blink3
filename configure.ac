@@ -4,7 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT(
 	[FRDM KL25Z Multicolor LED Blink Sample Application],
-	[1.0],
+	[1.1],
 	[coolparadox@gmail.com],
 	[frdm-kl25z-blink3],
 	[http://github.com/coolparadox/frdm-kl25z-blink3])
@@ -13,7 +13,10 @@ AC_CONFIG_SRCDIR([Sources/ProcessorExpert.c])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
+AM_PROG_AR
+AM_PROG_AS
 AC_PROG_CC
+AC_PROG_RANLIB
 
 # Check for Kinetis PDD headers
 required_pdd_headers="GPIO_PDD.h LPTMR_PDD.h"
@@ -101,5 +104,5 @@ AC_CHECK_LIB(
 	[AC_MSG_ERROR([missing EWL armv6-m libraries])])
 
 # Generate Makefile
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile support/libaeabi-cortexm0/Makefile])
 AC_OUTPUT

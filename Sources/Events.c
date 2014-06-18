@@ -75,9 +75,9 @@ void Cpu_OnNMIINT(void)
 /* ===================================================================*/
 void LEDTimer_OnInterrupt(LDD_TUserData *UserDataPtr)
 {
-  /* Write your code here ... */
-	static int led_state = 0;
-	switch (led_state++) {
+
+	static unsigned int led_state = 0;
+	switch (led_state++ % 7) {
 	case 0:
 		RedLED_SetVal(RedLED_DeviceData);
 		GreenLED_SetVal(GreenLED_DeviceData);
@@ -100,9 +100,9 @@ void LEDTimer_OnInterrupt(LDD_TUserData *UserDataPtr)
 		break;
 	default:
 		BlueLED_SetVal(BlueLED_DeviceData);
-		led_state = 1;
 		break;
 	}
+
 }
 
 /* END Events */
