@@ -5,7 +5,10 @@ EXTRA_DIST = \
 	build.sh \
 	Project_Settings/Linker_Files/ProcessorExpert.ld \
 	support/openocd \
-	support/libaeabi-cortexm0
+	support/libaeabi-cortexm0/*.S \
+	support/libaeabi-cortexm0/Makefile.am \
+	support/libaeabi-cortexm0/Makefile.in \
+	support/libaeabi-cortexm0/README.md
 
 bin_PROGRAMS = frdm_kl25z_blink3
 
